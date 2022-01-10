@@ -3,7 +3,10 @@ package br.com.zup.mspropostas.controllers;
 import br.com.zup.mspropostas.models.in.PropostaRequest;
 import br.com.zup.mspropostas.services.PropostaService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 

@@ -18,7 +18,7 @@ public class PropostaService {
     /*--------*/
 
     public void salvarProposta(Proposta proposta){
-        propostaRepository.save(proposta);
+            propostaRepository.save(proposta);
     }
 
 
