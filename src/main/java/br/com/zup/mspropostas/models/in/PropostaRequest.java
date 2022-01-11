@@ -1,6 +1,5 @@
 package br.com.zup.mspropostas.models.in;
 
-import br.com.zup.mspropostas.annotations.UniqueValueParam;
 import br.com.zup.mspropostas.models.Proposta;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
@@ -11,7 +10,6 @@ public class PropostaRequest {
 
     @NotBlank(message = "Documento não pode ser nulo ou vázio.")
     @Pattern(regexp = "^\\d{11}|\\d{14}$", message = "Este documento não é válido.")
-    @UniqueValueParam(fieldName = "documento", domainClass = Proposta.class)
     private String documento;
 
     @NotBlank(message = "E-mail não pode ser nulo ou vázio.")
@@ -39,9 +37,15 @@ public class PropostaRequest {
     }
 
 
+    public String getDocumento() {
+        return documento;
+    }
+
     public Proposta conveterParaProposta(){
         return new Proposta(documento, email, nome, endereco, salario);
     }
+
+
 
 
 }

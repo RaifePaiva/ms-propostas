@@ -1,5 +1,7 @@
 package br.com.zup.mspropostas.models;
 
+import br.com.zup.mspropostas.models.enums.StatusAnaliseFinanceira;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
@@ -31,6 +33,8 @@ public class Proposta {
     @NotNull
     private BigDecimal salario;
 
+    @Enumerated(EnumType.STRING)
+    private StatusAnaliseFinanceira statusDaAnalise;
 
     @Deprecated
     public Proposta(){}
@@ -41,5 +45,21 @@ public class Proposta {
         this.nome = nome;
         this.endereco = endereco;
         this.salario = salario;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setStatusDaAnalise(StatusAnaliseFinanceira statusDaAnalise) {
+        this.statusDaAnalise = statusDaAnalise;
     }
 }
